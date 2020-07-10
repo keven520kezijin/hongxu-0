@@ -22,19 +22,19 @@ export const asyncRouterMap = [
         name: 'dashboard',
         redirect: '/dashboard/workplace',
         component: RouteView,
-        meta: { title: 'menu.dashboard', keepAlive: true, icon: bxAnaalyse, permission: [ 'dashboard' ] },
+        meta: { title: 'menu.dashboard', keepAlive: true, icon: bxAnaalyse, permission: ['dashboard'] },
         children: [
           {
             path: '/dashboard/analysis/:pageNo([1-9]\\d*)?',
             name: 'Analysis',
             component: () => import('@/views/dashboard/Analysis'),
-            meta: { title: 'menu.dashboard.analysis', keepAlive: false, permission: [ 'dashboard' ] }
+            meta: { title: 'menu.dashboard.analysis', keepAlive: false, permission: ['dashboard'] }
           },
           {
             path: '/dashboard/workplace',
             name: 'Workplace',
             component: () => import('@/views/dashboard/Workplace'),
-            meta: { title: 'menu.dashboard.workplace', keepAlive: true, permission: [ 'dashboard' ] }
+            meta: { title: 'menu.dashboard.workplace', keepAlive: true, permission: ['dashboard'] }
           }
         ]
       },
@@ -57,23 +57,24 @@ export const asyncRouterMap = [
         meta: { title: '查询房屋', keepAlive: true, icon: 'form' }
       },
       {
-        path: 'systemSettings',
+        path: '/systemSettings',
         name: 'systemSettings',
         component: RouteView,
+        redirect: '/systemSettings/memberManage',
         meta: { title: '系统设置', keepAlive: true, icon: 'form' },
         children: [
           {
-            path: 'memberManage',
+            path: '/systemSettings/memberManage',
             name: 'memberManage',
             component: () => import('@/views/systemSettings/memberManage/index'),
             meta: { title: '成员管理', keepAlive: true, icon: 'form' }
           }, {
-            path: 'tagManage',
+            path: '/systemSettings/tagManage',
             name: 'tagManage',
             component: () => import('@/views/systemSettings/tagManage/index'),
             meta: { title: '标签管理', keepAlive: true, icon: 'form' }
           }, {
-            path: 'accessLog',
+            path: '/systemSettings/accessLog',
             name: 'accessLog',
             component: () => import('@/views/systemSettings/accessLog/index'),
             meta: { title: '访问日志', keepAlive: true, icon: 'form' }
