@@ -18,13 +18,13 @@
     <ads v-if="isProPreviewSite && !collapsed"/>
     <!-- Ads end -->
 
-    <setting-drawer :settings="settings" @change="handleSettingChange" />
+    <!-- <setting-drawer :settings="settings" @change="handleSettingChange" /> -->
     <template v-slot:rightContentRender>
       <right-content :top-menu="settings.layout === 'topmenu'" :is-mobile="isMobile" :theme="settings.theme" />
     </template>
-    <template v-slot:footerRender>
+    <!-- <template v-slot:footerRender>
       <global-footer />
-    </template>
+    </template> -->
     <router-view />
   </pro-layout>
 </template>

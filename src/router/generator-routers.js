@@ -89,6 +89,8 @@ export const generatorDynamicRouter = (token) => {
       listToTree(result, childrenNav, 0)
       rootRouter.children = childrenNav
       menuNav.push(rootRouter)
+      console.log('rootRouter', rootRouter)
+
       console.log('menuNav', menuNav)
       const routers = generator(menuNav)
       routers.push(notFoundRouter)
